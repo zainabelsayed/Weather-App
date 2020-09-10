@@ -1,0 +1,36 @@
+{
+    "name": "Cloudy",
+    "short_name": "Cloudy",
+    "icons": [
+        {
+            "src": "images/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "images/apple-touch-icon.png",
+            "sizes": "76x76",
+            "type": "image/png" 
+        },
+        {
+            "src": "images/mstile-150x150.png",
+            "sizes": "221x221",
+            "type": "image/png" 
+        },
+        {
+            "src": "images/safari-pinned-tab.svg",
+            "sizes": "137x137",
+            "type": "image/svg" 
+        }
+
+    ],
+    "theme_color": "#53627c",
+    "background_color": "#1e2432",
+    "start_url": "index.html",
+    "display": "standalone",
+    "orientation": "any",
+    "serviceworker":{
+        "src":"sw.js",
+        "scope":"/"
+    }
+}

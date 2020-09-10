@@ -1,0 +1,216 @@
+:root {
+    --text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432;
+    --red: #ff1e42;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+  }
+  html,body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+body{
+    position: relative;
+    background-image: url('images/background-01.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    color:var(--text_dark);
+    justify-content: center;
+}
+*:focus{
+    outline: 0;
+    box-shadow: 0 0 10px var(--text_med);
+    border-color: var(--text_med);
+}
+#app{
+    justify-content: center;
+    font-size: medium;
+    font-family: 'Oswald', sans-serif;
+}
+#app button {
+    position: relative;
+    color: var(--text_light);
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 15px 20px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: var(--red);
+    transition: background 0.3s ease-in-out;
+  }
+#app button:hover, #app button:focus{
+    background: var(--darkred);
+}
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+.holder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    color: var(--text_light);
+}
+#zip{
+    font-size: large;
+    height: 40px;
+    padding: 5px 5px 10px;
+    border-bottom: 1px solid;
+}
+.error{
+    color: var(--red);
+}
+.entry{
+    justify-content: start;
+    margin: 70px 0px 20px;
+}
+.entry .cities{
+    list-style-type: none;
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.entry .city{
+    width: 80%;
+    position: relative;
+    padding: 25px 20px 20px 20px;
+    border-radius: 20px;
+    background: var(--text_light);
+    color: var(--text_med);
+}
+.entry .city::after{
+    content: '';
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    bottom: -12px;
+    left: 5%;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 20px;
+    background: var(--text_light);
+}
+.entry .date,.content{
+    font-size: 1em;
+    text-align: center;
+}
+.entry figcaption{
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.entry .temp{
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text_dark);
+}
+.entry .temp sup{
+    font-size: medium;
+}
+.entry .city sup{
+    font-size: medium;
+}
+.entry .city-name{
+    font-size: xx-large;
+    text-align: center;
+}
+.entry .city-name .sys{
+    padding: 0.2em 0.6em;
+    border-radius: 30px;
+    color: var(--text_light);
+    background: var(--orange);
+}
+
+.entry figure{
+    float: right;
+}
+.headline {
+    font-weight: bold;
+    font-size: 300%;
+    letter-spacing: 0.02em;
+    padding: 0 0 30px 0;
+}
+/*  Basic Styling To Override Default For Basic HTML Elements */
+/* Reset style for HTML element on active to have no border*/
+
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color:var(--text_light);
+    font-size: medium;
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color:var(--text_light);
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color:var(--text_light);
+    font-family: 'Oswald', sans-serif;
+
+} 
+@media screen and (max-width:700px){
+    #container{
+        background-image: url('images/m-background-01.png');
+        background-color:none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+    #app button{
+        margin-top: 20px;
+        width: 80%;
+        margin-left: 0;
+    }
+    .headline {
+        font-size: 200%;
+    }
+    .entry .city{
+        width: 100%;
+        padding: 15px 15px 10px 10px;
+    }
+    .entry .cities{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .entry{
+     float: left;
+    }
+    .holder{
+        justify-content: center;
+        position: relative;
+    }
+    .entry .city-icon{
+        justify-content:center;
+    }
+}
+@media screen and (max-width:320px){
+    .entry .city{
+        padding: 10px 5px 5px 5px;
+    }
+    .entry .cities{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (min-width:701px) and (max-width:1040px){
+    .entry .cities{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
